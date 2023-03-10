@@ -1,12 +1,60 @@
+Copy code
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bùi Gia Chan Canh Chua</title>
-</head>
-<body>
-    
-</body>
+    <title>Trái tim đập liên tục</title>
+    <style>
+      #heart {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 90px;
+        background: linear-gradient(to bottom, #ff7f7f 0%, #ff4040 100%);
+        border-radius: 50px 50px 0 0;
+        transform-origin: 50% 100%;
+        animation: heartbeat 1s infinite;
+      }
+      
+      #heart::before, #heart::after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(to bottom, #ff7f7f 0%, #ff4040 100%);
+        border-radius: 50px 50px 0 0;
+      }
+      
+      #heart::before {
+        top: -45px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        transform: rotate(-45deg);
+      }
+      
+      #heart::after {
+        top: -45px;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        transform: rotate(45deg);
+      }
+      
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1) rotate(0);
+        }
+        50% {
+          transform: scale(0.8) rotate(0);
+        }
+        100% {
+          transform: scale(1) rotate(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="heart"></div>
+  </body>
 </html>
